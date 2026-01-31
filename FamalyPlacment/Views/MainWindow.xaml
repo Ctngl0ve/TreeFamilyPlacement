@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:FamalyPlacment.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:FamalyPlacment.ViewModels"
-    Title="Размещение мебели"
+    Title="Размещение деревьев"
     Width="400"
     Height="300"
     MinWidth="350"
@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!--  Тип мебели  -->
+        <!--  Тип дерева  -->
         <Grid Grid.Row="0" Margin="0,0,0,15">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -33,17 +33,17 @@
                 Grid.Column="0"
                 Margin="0,0,10,0"
                 VerticalAlignment="Center"
-                Content="Тип мебели:" />
+                Content="Тип дерева:" />
             <ComboBox
                 Grid.Column="1"
-                ItemsSource="{Binding FurnitureTypes}"
-                SelectedItem="{Binding SelectedFurnitureType}">
+                ItemsSource="{Binding TreeTypes}"
+                SelectedItem="{Binding SelectedTreeType}">
                 <ComboBox.Resources>
-                    <viewModels:FurnitureTypeConverter x:Key="FurnitureTypeConverter" />
+                    <viewModels:TreeTypeConverter x:Key="TreeTypeConverter" />
                 </ComboBox.Resources>
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Converter={StaticResource FurnitureTypeConverter}}" />
+                        <TextBlock Text="{Binding Converter={StaticResource TreeTypeConverter}}" />
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
